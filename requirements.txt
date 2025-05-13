@@ -3,3 +3,4 @@ networkx
 matplotlib
 coverage
 pydot
+pytest
