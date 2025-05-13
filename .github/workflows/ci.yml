@@ -28,7 +28,7 @@ jobs:
         run: |
           coverage run --branch -m pytest test_auth.py
           coverage report -m --no-skip-covered
-          coverage xml --no-skip-covered
+          coverage xml
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
