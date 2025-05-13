@@ -1,0 +1,10 @@
+[run]
+branch = True
+source = .
+
+[report]
+show_missing = True
+skip_covered = True
+omit =
+	gen_info.py
+	test_auth.py

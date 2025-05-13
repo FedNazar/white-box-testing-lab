@@ -1,0 +1,27 @@
+strict digraph {
+n0 [label=start];
+n1 [label="if not username or not password"];
+n2 [label="return 'Missing credentials'"];
+n3 [label="if username not in db"];
+n4 [label="return 'User not found'"];
+n5 [label="attempts = db[username].get('attempts', 0)"];
+n6 [label="if attempts >= 3"];
+n7 [label="return 'Account locked'"];
+n8 [label="if db[username]['password'] != password"];
+n9 [label="db[username]['attempts'] = attempts + 1"];
+n10 [label="return 'Invalid password'"];
+n11 [label="db[username]['attempts'] = 0"];
+n12 [label="return 'Authenticated'"];
+n0 -> n1;
+n1 -> n2;
+n1 -> n3;
+n3 -> n4;
+n3 -> n5;
+n5 -> n6;
+n6 -> n7;
+n6 -> n8;
+n8 -> n9;
+n8 -> n11;
+n9 -> n10;
+n11 -> n12;
+}
